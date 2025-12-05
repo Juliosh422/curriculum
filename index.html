@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Estudiante Ingeniería Informática</title>
+    <meta name="description" content="CV de Julio de Lis Barbeito Suárez - Estudiante de Ingeniería Informática">
+    <meta name="author" content="Julio de Lis Barbeito Suárez">
+    <title>CV - Julio de Lis Barbeito Suárez</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -139,6 +141,16 @@
             width: 24px;
             text-align: center;
         }
+
+        .project-card {
+            cursor: default;
+        }
+
+        .project-card:hover {
+            background: var(--bg-card);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
         
         .skills-grid {
             display: flex;
@@ -257,15 +269,59 @@
             font-size: 13px;
         }
 
-        
+        .print-info {
+            display: none;
+        }
+
+        @media print {
+            body { 
+                background: white !important; 
+                color: black; 
+            }
+            .card { 
+                background: white !important;
+                border: 1px solid #ddd; 
+                box-shadow: none; 
+            }
+            .link-btn {
+                background: white !important;
+                border: 1px solid #ddd;
+            }
+            .skill-tag {
+                background: #f0f0f0 !important;
+                color: black !important;
+                border: 1px solid #ddd;
+            }
+            .download-btn { 
+                display: none !important; 
+            }
+            .print-info {
+                display: block !important;
+                text-align: center;
+                margin-top: 24px;
+                padding: 20px;
+                border: 2px solid #333;
+                border-radius: 12px;
+                background: white !important;
+                page-break-inside: avoid;
+            }
+            .print-info img {
+                display: block !important;
+                margin: 12px auto;
+            }
+            .print-info p,
+            .print-info a {
+                color: black !important;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="profile">
             <div class="imagenes-titulo">
-                <img src="perfil.jpg" class="fic">
-                <img src="fic.jpg" class="fic">
+                <img src="perfil.jpg" class="fic" alt="Fotografía de Julio de Lis Barbeito Suárez" onerror="this.style.display='none'">
+                <img src="fic.jpg" class="fic" alt="Escudo Facultad de Informática UDC" onerror="this.style.display='none'">
             </div>
             <h1 class="name">Julio de Lis Barbeito Suárez</h1>
             <p class="title">Ingeniería de Computadores (EC)</p>
@@ -333,18 +389,18 @@
 
         <section class="section">
             <h2 class="section-title">Proyectos Destacados</h2>
-            <a href="#" class="link-btn no-link">
+            <div class="link-btn project-card">
                 <i class="fas fa-microchip"></i>
                 <span>Análisis de rendimiento de algoritmos usando PMCs a bajo nivel</span>
-            </a>
-            <a href="#" class="link-btn no-link">
+            </div>
+            <div class="link-btn project-card">
                 <i class="fas fa-server"></i>
                 <span>Montaje, mantenimiento y administración de servidor con VPN, Gestor de ficheros Cloud y otros servicios.</span>
-            </a>
-            <a href="#" class="link-btn no-link">
+            </div>
+            <div class="link-btn project-card">
                 <i class="fas fa-wifi"></i>
                 <span>Instalación de iluminación controlada por ESP32 e interfaz web</span>
-            </a>
+            </div>
         </section>
 
         <section class="section">
@@ -411,24 +467,36 @@
                 <i class="fas fa-phone"></i>
                 <span>+34 675 39 38 71</span>
             </a>
-            <a href="#" class="link-btn">
+            <a href="https://goo.gl/maps/cambre-a-coruna" class="link-btn" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Cambre, A Coruña</span>
             </a>
         </section>
+        
         <div class="social-links">
-            <a href="https://github.com/Juliosh422" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="www.linkedin.com/in/julio-de-lis" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Juliosh422" class="social-link" aria-label="Perfil de GitHub" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/julio-de-lis" class="social-link" aria-label="Perfil de LinkedIn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
         
-    <button class="download-btn" onclick="window.print()">
-        <i class="fas fa-download"></i>
-        Descargar CV en PDF
-    </button>
-    
-    <footer class="footer">
-        <p>© 2025 Julio de Lis</p>
-    </footer>
+        <button class="download-btn" onclick="window.print()">
+            <i class="fas fa-download"></i>
+            Descargar CV en PDF
+        </button>
+        
+        <div class="print-info">
+            <p style="font-weight: 600; font-size: 16px; margin-bottom: 12px;">📱 Versión web interactiva</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cv.dlis.broemia.org" alt="Código QR para acceder a la versión web del CV" style="width: 150px; height: 150px; border: 2px solid #333; padding: 8px; background: white;">
+            <p style="font-size: 14px; margin-top: 12px; font-weight: 500;">Escanea el código QR o visita:</p>
+            <a href="https://cv.dlis.broemia.org" style="font-size: 14px; color: #4f46e5; font-weight: 600; text-decoration: none;">https://cv.dlis.broemia.org</a>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2025 Julio de Lis</p>
+        </footer>
     </div>
 </body>
 </html>
