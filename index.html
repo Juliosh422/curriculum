@@ -273,10 +273,17 @@
             display: none;
         }
 
+        .print-avatar { display: none; }
+
         @media print {
             body { 
                 background: white !important; 
                 color: black; 
+            }
+            .screen-avatar { display: none !important; }
+            .print-avatar  { display: block !important; }
+            img[src="fic.jpg"] {
+                display: none !important;
             }
             .card { 
                 background: white !important;
@@ -320,7 +327,8 @@
     <div class="container">
         <header class="profile">
             <div class="imagenes-titulo">
-                <img src="perfil.jpg" class="fic" alt="Fotografía de Julio de Lis Barbeito Suárez" onerror="this.style.display='none'">
+                <img src="perfil.jpg" class="fic screen-avatar" alt="Fotografía de Julio de Lis Barbeito Suárez" onerror="this.style.display='none'">
+                <img src="perfil_low.jpg" class="fic print-avatar" alt="Fotografía de Julio de Lis Barbeito Suárez" onerror="this.style.display='none'">
                 <img src="fic.jpg" class="fic" alt="Escudo Facultad de Informática UDC" onerror="this.style.display='none'">
             </div>
             <h1 class="name">Julio de Lis Barbeito Suárez</h1>
@@ -337,7 +345,7 @@
                         <span class="exp-date">2022 - Presente</span>
                     </div>
                     <p class="exp-company">Universidade da Coruña • Mención: Enx. de Computadores</p>
-                    <p class="exp-desc">Media actual: 6.28/10. Asignaturas destacadas: Disp. Hardware e Interfaces, Arquitectura de Computadores, Software de Comunicaciones.</p>
+                    <p class="exp-desc">Media actual: 6.28/10. Asignaturas destacadas: Sistemas Embebidos, Adm. de Infraestructuras Informáticas, Redes Móviles e Inalámbricas.</p>
                 </div>
             </div>
         </section>
@@ -379,10 +387,10 @@
                     <span class="skill-tag">Linux</span>
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">ESP32/Arduino</span>
-                    <span class="skill-tag">FreeRTOS</span>
-                    <span class="skill-tag">Cross Compilation</span>
                     <span class="skill-tag">LoRa y Meshtastic</span>
                     <span class="skill-tag">Administración de redes</span>
+                    <span class="skill-tag">Windows Server y UNIX</span>
+                    <span class="skill-tag">Infraestructuras virtualizadas</span>
                 </div>
             </div>
         </section>
@@ -400,6 +408,13 @@
             <div class="link-btn project-card">
                 <i class="fas fa-wifi"></i>
                 <span>Instalación de iluminación controlada por ESP32 e interfaz web</span>
+            </div>
+            <div class="link-btn project-card" style="border-color: rgba(99, 102, 241, 0.3); opacity: 0.75;">
+                <i class="fas fa-clock" style="color: var(--accent);"></i>
+                <span>
+                    <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); display: block; margin-bottom: 2px;">En curso</span>
+                    Despliegue de segundo servidor Dell R320 con Proxmox VE en infraestructura de laboratorio.
+                </span>
             </div>
         </section>
 
